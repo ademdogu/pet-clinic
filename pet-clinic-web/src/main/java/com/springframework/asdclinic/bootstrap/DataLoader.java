@@ -38,13 +38,13 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadData() {
 
-        Speciality radiology = new Speciality();
+        Specialty radiology = new Specialty();
         radiology.setDescription("radiology");
 
-        Speciality surgery = new Speciality();
+        Specialty surgery = new Specialty();
         surgery.setDescription("surgery");
 
-        Speciality dentistry = new Speciality();
+        Specialty dentistry = new Specialty();
         dentistry.setDescription("dentistry");
 
         radiology = specialtiesService.save(radiology);

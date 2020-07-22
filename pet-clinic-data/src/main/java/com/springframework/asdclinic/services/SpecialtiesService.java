@@ -1,7 +1,7 @@
 package com.springframework.asdclinic.services;
 
-import com.springframework.asdclinic.model.Speciality;
+import com.springframework.asdclinic.model.Specialty;
 
-public interface SpecialtiesService extends CrudService<Speciality, Long> {
+public interface SpecialtiesService extends CrudService<Specialty, Long> {
 
 }
