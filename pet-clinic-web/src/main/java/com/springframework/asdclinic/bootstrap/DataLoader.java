@@ -1,11 +1,9 @@
 package com.springframework.asdclinic.bootstrap;
 
-import com.springframework.asdclinic.model.Owner;
-import com.springframework.asdclinic.model.Pet;
-import com.springframework.asdclinic.model.PetType;
-import com.springframework.asdclinic.model.Vet;
+import com.springframework.asdclinic.model.*;
 import com.springframework.asdclinic.services.OwnerService;
 import com.springframework.asdclinic.services.PetTypeService;
+import com.springframework.asdclinic.services.SpecialtiesService;
 import com.springframework.asdclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,15 +16,30 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialtiesService specialtiesService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtiesService specialtiesService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialtiesService = specialtiesService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        Speciality radiology = new Speciality();
+        radiology.setDescription("radiology");
+
+        Speciality surgery = new Speciality();
+        surgery.setDescription("surgery");
+
+        Speciality dentistry = new Speciality();
+        dentistry.setDescription("dentistry");
+
+        radiology = specialtiesService.save(radiology);
+        surgery = specialtiesService.save(surgery);
+        dentistry = specialtiesService.save(dentistry);
 
         PetType dog = new PetType();
         dog.setName("Ares");
@@ -76,13 +89,13 @@ public class DataLoader implements CommandLineRunner {
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
-
+        vet1.getSpecialities().add(radiology);
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
-
+        vet2.getSpecialities().add(surgery);
         vetService.save(vet2);
 
         System.out.println("Loaded Vets...");
