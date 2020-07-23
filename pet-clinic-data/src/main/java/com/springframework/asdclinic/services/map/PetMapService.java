@@ -3,11 +3,13 @@ package com.springframework.asdclinic.services.map;
 import com.springframework.asdclinic.model.Pet;
 import com.springframework.asdclinic.services.CrudService;
 import com.springframework.asdclinic.services.PetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
