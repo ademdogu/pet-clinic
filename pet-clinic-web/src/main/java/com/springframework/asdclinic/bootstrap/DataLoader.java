@@ -3,7 +3,7 @@ package com.springframework.asdclinic.bootstrap;
 import com.springframework.asdclinic.model.*;
 import com.springframework.asdclinic.services.OwnerService;
 import com.springframework.asdclinic.services.PetTypeService;
-import com.springframework.asdclinic.services.SpecialtiesService;
+import com.springframework.asdclinic.services.SpecialtyService;
 import com.springframework.asdclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -16,13 +16,13 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
-    private final SpecialtiesService specialtiesService;
+    private final SpecialtyService specialtyService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtiesService specialtiesService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
-        this.specialtiesService = specialtiesService;
+        this.specialtyService = specialtyService;
     }
 
     @Override
@@ -47,9 +47,9 @@ public class DataLoader implements CommandLineRunner {
         Specialty dentistry = new Specialty();
         dentistry.setDescription("dentistry");
 
-        radiology = specialtiesService.save(radiology);
-        surgery = specialtiesService.save(surgery);
-        dentistry = specialtiesService.save(dentistry);
+        radiology = specialtyService.save(radiology);
+        surgery = specialtyService.save(surgery);
+        dentistry = specialtyService.save(dentistry);
 
         PetType dog = new PetType();
         dog.setName("Ares");
