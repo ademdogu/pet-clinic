@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.springframework.asdclinic.services.springdatajpa.OwnerSDJpaServiceTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.846 s - in com.springframework.asdclinic.services.springdatajpa.OwnerSDJpaServiceTest
