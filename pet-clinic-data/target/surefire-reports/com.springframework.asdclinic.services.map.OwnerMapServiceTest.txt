@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.springframework.asdclinic.services.map.OwnerMapServiceTest
--------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in com.springframework.asdclinic.services.map.OwnerMapServiceTest
