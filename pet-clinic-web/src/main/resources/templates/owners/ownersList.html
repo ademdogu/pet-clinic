@@ -12,7 +12,7 @@
             <th style="width: 150px;">Name</th>
             <th style="width: 200px;">Address</th>
             <th>City</th>
-            <th style="width: 120px">Phone</th>
+            <th style="width: 120px">Telephone</th>
             <th>Pets</th>
         </tr>
         </thead>
@@ -23,7 +23,7 @@
               </td>
               <td th:text="${owner.address}"/>
               <td th:text="${owner.city}"/>
-              <td th:text="${owner.phone}"/>
+              <td th:text="${owner.telephone}"/>
               <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>
           </tr>
         </tbody>

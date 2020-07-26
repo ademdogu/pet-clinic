@@ -15,6 +15,7 @@
       <module name="asd-pet-clinic" target="11" />
       <module name="pet-clinic-data" target="11" />
       <module name="pet-clinic-web" target="11" />
+      <module name="sfg-pet-clinic" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
